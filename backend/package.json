@@ -1,6 +1,9 @@
 {
   "name": "students-api",
   "version": "1.0.0",
+  "engines": {
+  "node": "20.x"
+},
   "description": "API REST CRUD pour la gestion des étudiants (PostgreSQL)",
   "main": "dist/index.js",
   "scripts": {
