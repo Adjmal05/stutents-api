@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:3000
+
+### Lister tous les étudiants
+GET {{baseUrl}}/students
+
+### Lire un étudiant précis (remplacer :id)
+GET {{baseUrl}}/students/REMPLACER_ID
+
+### Créer un étudiant
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+{
+  "firstName": "Sitraka",
+  "lastName": "Randria",
+  "email": "sitraka.randria@hei.mg",
+  "phone": "0341112233",
+  "dateOfBirth": "2004-05-20",
+  "address": "Antananarivo"
+}
+
+### Modifier un étudiant (remplacement complet)
+PUT {{baseUrl}}/students/REMPLACER_ID
+Content-Type: application/json
+
+{
+  "firstName": "Sitraka",
+  "lastName": "Randria",
+  "email": "sitraka.new@hei.mg",
+  "phone": "0341112233",
+  "dateOfBirth": "2004-05-20",
+  "address": "Toamasina"
+}
+
+### Modifier un étudiant (partiel)
+PATCH {{baseUrl}}/students/REMPLACER_ID
+Content-Type: application/json
+
+{
+  "phone": "0349998877"
+}
+
+### Supprimer un étudiant
+DELETE {{baseUrl}}/students/REMPLACER_ID
