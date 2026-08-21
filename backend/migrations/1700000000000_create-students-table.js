@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 
 exports.up = (pgm) => {
   pgm.createExtension("pgcrypto", { ifNotExists: true });

@@ -1,7 +1,7 @@
 import { pool } from "../configuration/database";
 import { Student, CreateStudentDTO, UpdateStudentDTO } from "../models/Student";
 
-
+// Transforme une ligne SQL (snake_case) en objet Student (camelCase)
 function mapRowToStudent(row: any): Student {
   return {
     id: row.id,

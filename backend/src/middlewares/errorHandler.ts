@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from "express";
 import { ApiError } from "../utils/ApiError";
 
-
+// Doit être déclaré en dernier dans index.ts
 export function errorHandler(
   err: Error | ApiError,
   req: Request,
   res: Response,
-  
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   next: NextFunction
 ) {
   const statusCode = err instanceof ApiError ? err.statusCode : 500;

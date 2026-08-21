@@ -3,7 +3,7 @@ import { studentService } from "../services/student.service";
 
 const router = Router();
 
-
+// GET /students
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const students = await studentService.getAll();
@@ -13,7 +13,7 @@ router.get("/", async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-
+// GET /students/:id
 router.get("/:id", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const student = await studentService.getById(req.params.id);
@@ -23,7 +23,7 @@ router.get("/:id", async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-
+// POST /students
 router.post("/", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const student = await studentService.create(req.body);
@@ -33,6 +33,7 @@ router.post("/", async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+// PUT /students/:id
 router.put("/:id", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const student = await studentService.update(req.params.id, req.body);
@@ -42,6 +43,7 @@ router.put("/:id", async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+// PATCH /students/:id
 router.patch("/:id", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const student = await studentService.patch(req.params.id, req.body);
@@ -51,6 +53,7 @@ router.patch("/:id", async (req: Request, res: Response, next: NextFunction) => 
   }
 });
 
+// DELETE /students/:id
 router.delete("/:id", async (req: Request, res: Response, next: NextFunction) => {
   try {
     await studentService.remove(req.params.id);
